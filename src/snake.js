@@ -1,4 +1,4 @@
-(function(){
+try{(function(){
 var ID='__snake_bm__',old=document.getElementById(ID);
 if(old){old.__close();return;}
 var N=20,HUD=38,dpr=Math.min(window.devicePixelRatio||1,3);
@@ -946,4 +946,4 @@ if(ov.parentNode)ov.parentNode.removeChild(ov);
 ov.__close=close;
 ov.__d=function(s){return eval(s);};/*DBG*/
 raf=requestAnimationFrame(frame);
-})();
+})();}catch(e){alert('Snake+ error: '+(e&&e.message));}

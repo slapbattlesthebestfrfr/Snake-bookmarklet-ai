@@ -14,7 +14,7 @@ min=src.replace(/\/\*[\s\S]*?\*\//g,'').split('\n').map(l=>l.trim()).filter(Bool
 const bm='javascript:'+min.replace(/%/g,'%25').replace(/#/g,'%23').replace(/ /g,'%20').replace(/\n/g,'');
 fs.writeFileSync(__dirname+'/bookmarklet.txt',bm);
 fs.writeFileSync(__dirname+'/snake.min.js',min);
-const loader="javascript:(function(){var%20s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/slapbattlesthebestfrfr/Snake-bookmarklet-ai@main/snake.min.js';document.body.appendChild(s)})()";
+const loader="javascript:(function(){var%20s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/slapbattlesthebestfrfr/Snake-bookmarklet-ai@main/snake.min.js';s.onerror=function(){alert('Snake+%20could%20not%20download%20the%20game%20on%20this%20site.%20Try%20the%20full%20version.')};document.body.appendChild(s)})()";
 fs.writeFileSync(__dirname+'/loader.txt',loader);
 const esc=bm.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 const html=fs.readFileSync(__dirname+'/install.template.html','utf8').replace('__BOOKMARKLET__',()=>esc).replace('__BOOKMARKLET__','');
