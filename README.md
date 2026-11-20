@@ -15,7 +15,7 @@ There are two versions. Pick one:
 Short code:
 
 ```
-javascript:(function(){var%20s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/slapbattlesthebestfrfr/Snake-bookmarklet-ai@main/snake.min.js';document.body.appendChild(s)})()
+javascript:(function(){var%20s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/slapbattlesthebestfrfr/Snake-bookmarklet-ai@main/snake.min.js';s.onerror=function(){alert('Snake+%20could%20not%20download%20the%20game%20on%20this%20site.%20Try%20the%20full%20version.')};document.body.appendChild(s)})()
 ```
 
 ### iPad / iPhone (Safari)
@@ -33,6 +33,13 @@ javascript:(function(){var%20s=document.createElement('script');s.src='https://c
 
 ### Desktop
 Create a bookmark, paste the code as its URL, click it on any page.
+
+## Check that bookmarklets work at all
+Make a second bookmark with this as its URL and run it the same way:
+```
+javascript:alert('bookmarklets work')
+```
+If no popup appears, the browser isn't running bookmarklets (see below), and the game can't run either.
 
 ## Things that stop it from working
 - The code must start with `javascript:` – some browsers delete that part when pasting
