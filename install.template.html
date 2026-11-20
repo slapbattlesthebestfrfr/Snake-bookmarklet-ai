@@ -5,8 +5,8 @@
 <h2>iPad (Safari)</h2>
 <ol><li>Tap <b>Copy code</b> below.</li><li>Bookmark this page (Share → Add Bookmark), name it “Snake”.</li><li>Open Bookmarks → Edit, tap the “Snake” bookmark, replace its address with the copied code, Done.</li><li>On any page, open Bookmarks and tap “Snake”.</li></ol>
 <p><button id="c">Copy code</button></p>
-<textarea id="t" readonly>__BOOKMARKLET__</textarea>
-<p>Play: arrows/WASD or swipe. Space pauses, R restarts, Esc or tapping outside the window closes.</p>
+<textarea id="t" readonly></textarea>
+<p>8 modes incl. a 10-boss Boss Rush. Arrows/WASD or swipe. R restarts, M menu, Space pauses, N sound, Esc or tapping outside closes.</p>
 <script>document.getElementById('t').value=document.querySelector('a.bm').getAttribute('href');
 document.getElementById('c').onclick=function(){var t=document.getElementById('t');t.select();t.setSelectionRange(0,1e6);try{navigator.clipboard.writeText(t.value)}catch(e){document.execCommand('copy')}this.textContent='Copied!'};</script>
 </body></html>
